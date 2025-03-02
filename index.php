@@ -90,7 +90,7 @@ padding:15px 0px ;
 </body>
 <footer>
 <ul class="rodape">
-<li><strong>Kirkland< - Servidor de Minigames</strong> © 2025 - Todos os direitos reservados.</li>
+<li><strong>Kirkland - Servidor de Minigames</strong> © 2025 - Todos os direitos reservados.</li>
 </ul>
 </footer>
 </html>
