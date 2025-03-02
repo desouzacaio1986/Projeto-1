@@ -1,0 +1,64 @@
+/* --- Sistema de Resete --- */
+*{
+margin:0;
+padding:0;
+}
+/* --- Padrão para o Corpo --- */
+body {
+background-color: #414343;
+background-size: 100%;
+font-family: Arial, sans-serif;
+color: #fff;
+}
+/* --- Cabeçario ---- */
+.topo{
+width:auto;
+height:auto;
+border-bottom:solid 3px #fff;    
+}
+/* --- Logo ---*/
+.logo{
+width:auto;
+margin:10px 0px;
+}
+.logo li{
+font:normal 36pt Arial;
+color:#fff;
+text-align:center;
+padding:10px 0px;
+}
+/* --- Menu --- */
+.menu{
+width: auto;
+height:60px;
+background-color:#313140;
+}
+.menu li{
+float:left;
+margin:15px 70px;
+text-decoration: none;
+list-style:none;
+}
+.menu li a{
+font: normal 18pt Arial;
+color:#fff;
+text-transform: uppercase;
+text-decoration: none;
+list-style:none;
+}
+.menu li a:hover{
+background-color:#CACAD9;
+}
+/* --- Rodapé --- */
+.rodape{
+border-top:solid 3px #fff;
+background-color:#313140;
+width: auto;
+height:60px;
+}
+.rodape li{
+font:normal 18pt Arial;
+color:#fff;
+text-align:center;
+padding:15px 0px ;
+}

@@ -1,0 +1,241 @@
+:root {
+--primary-color: #0f1941;
+--secondary-color: #ff2957;
+--accent-color: #00ff9f;
+--text-color: #ffffff;
+--neon-shadow: 0 0 7px var(--accent-color),
+0 0 10px var(--accent-color),
+0 0 21px var(--accent-color);
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+    background-color: var(--primary-color);
+    background-image: 
+        radial-gradient(circle at center, rgba(66, 103, 255, 0.1) 0%, transparent 70%),
+        linear-gradient(45deg, rgba(0, 255, 159, 0.05) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(255, 41, 87, 0.05) 25%, transparent 25%);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+    background-position: center, 0 0, 0 0;
+    font-family: 'Rubik', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.topo {
+    background: rgba(15, 25, 65, 0.95);
+    padding: 1rem;
+    border-bottom: 3px solid var(--accent-color);
+    box-shadow: var(--neon-shadow);
+    position: relative;
+}
+
+.logo {
+    list-style: none;
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+.logo li:first-child {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 
+        3px 3px 0 var(--accent-color),
+        -3px -3px 0 var(--accent-color);
+    animation: textFlicker 2s infinite alternate;
+}
+
+.logo li:last-child {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 1rem;
+}
+
+/* Estilo principal do container do menu */
+.menu {
+    background: transparent;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Container dos itens do menu */
+.menu li {
+    list-style: none;
+    perspective: 1000px; /* Adiciona perspectiva para efeito 3D */
+}
+
+/* Estilo dos links do menu */
+.menu li a {
+    color: var(--text-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    padding: 1rem 1.5rem;
+    background: var(--secondary-color);
+    display: inline-block;
+    position: relative;
+    transform-style: preserve-3d; /* Mantém o efeito 3D */
+    transition: transform 0.3s ease;
+    border-radius: 4px; /* Cantos arredondados */
+}
+
+/* Face traseira do botão - Efeito de profundidade */
+.menu li a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: var(--accent-color);
+    transform: translateZ(-10px);
+    z-index: -1;
+    border-radius: 4px; /* Cantos arredondados */
+}
+
+/* Face lateral direita do botão */
+.menu li a::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 100%;
+    right: -8px;
+    top: 0;
+    background: var(--accent-color);
+    transform: rotateY(-90deg);
+    transform-origin: right;
+    filter: brightness(0.7);
+}
+
+/* Face inferior do botão */
+.menu li a span {
+    position: absolute;
+    width: 100%;
+    height: 8px;
+    background: var(--accent-color);
+    left: 0;
+    bottom: -8px;
+    transform: rotateX(-90deg);
+    transform-origin: top;
+    filter: brightness(0.5);
+}
+
+/* Efeito hover - Elevação e mudança de cor */
+.menu li a:hover {
+    transform: translateZ(5px) translateY(-5px);
+    background: var(--accent-color);
+    color: var(--primary-color);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* Efeito de clique - Simula pressionar o botão */
+.menu li a:active {
+    transform: translateZ(0) translateY(0);
+    transition: transform 0.1s ease;
+}
+
+/* Mudança de cor da face traseira no hover */
+.menu li a:hover::before {
+    background: var(--secondary-color);
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        padding: 0.5rem;
+    }
+
+    .menu li {
+        width: 100%;
+    }
+
+    .menu li a {
+        display: block;
+        text-align: center;
+        font-size: 0.7rem;
+        padding: 0.8rem;
+    }
+}
+
+/* Animação de brilho neon nos botões */
+@keyframes buttonGlow {
+    0%, 100% {
+        box-shadow: 0 0 5px var(--accent-color),
+                   0 0 10px var(--accent-color);
+    }
+    50% {
+        box-shadow: 0 0 15px var(--accent-color),
+                   0 0 20px var(--accent-color);
+    }
+}
+
+/* Aplicação do efeito de brilho no hover */
+.menu li a:hover {
+    animation: buttonGlow 2s infinite;
+}
+
+.conteudo-principal {
+    flex: 1;
+    padding: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer {
+    width: 100%;
+    margin-top: auto;
+}
+
+.rodape {
+    background: rgba(15, 25, 65, 0.95);
+    padding: 2.5rem;
+    text-align: center;
+    border-top: 4px solid var(--accent-color);
+    box-shadow: var(--neon-shadow);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.2rem;
+    width: 100%;
+    line-height: 2;
+}
+
+/* Remove o ponto da lista no rodapé */
+.rodape li {
+    list-style: none;
+}
+
+@keyframes textFlicker {
+    0% {
+        text-shadow: 
+            3px 3px 0 var(--accent-color),
+            -3px -3px 0 var(--accent-color);
+    }
+    100% {
+        text-shadow: 
+            3px 3px 0 var(--accent-color),
+            -3px -3px 0 var(--accent-color),
+            0 0 20px var(--accent-color);
+    }
+}
